@@ -12,6 +12,8 @@ import {
   ButtonIcon,
   ButtonGroup,
 } from '@/components/ui/button'
+import { AppKitButton } from '@reown/appkit-wagmi-react-native'
+import ConnectWalletButton from '@/components/ConnectWalletButton'
 
 export default function HomeScreen() {
   return (
@@ -25,16 +27,11 @@ export default function HomeScreen() {
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
-
       <ThemedView style={styles.titleContainer}>
-        <ButtonGroup>
-          <Button>
-            <ButtonText>Connect wallet</ButtonText>
-            {/* <ButtonSpinner /> */}
-            {/* <ButtonIcon /> */}
-          </Button>
-        </ButtonGroup>
+        <ConnectWalletButton />
       </ThemedView>
+
+      <ThemedView style={styles.titleContainer}></ThemedView>
     </ParallaxScrollView>
   )
 }
