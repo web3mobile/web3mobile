@@ -1,4 +1,5 @@
 import { Image, StyleSheet, Platform } from 'react-native'
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 
 import { HelloWave } from '@/components/HelloWave'
 import ParallaxScrollView from '@/components/ParallaxScrollView'
@@ -17,10 +18,7 @@ export default function HomeScreen() {
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
+        <FontAwesome5 size={310} name="ethereum" style={styles.headerImage} />
       }
     >
       <ThemedView style={styles.titleContainer}>
@@ -52,11 +50,10 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
+  headerImage: {
+    color: '#808080',
+    bottom: -90,
+    left: -35,
     position: 'absolute',
   },
 })
