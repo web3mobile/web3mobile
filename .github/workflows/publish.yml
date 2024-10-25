@@ -1,0 +1,36 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - main # Change 'main' to the branch you want to trigger the publish
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16' # Or the version your project requires
+
+      # Install dependencies and build the package
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the package
+        run: npm run build # Replace with your build command if needed
+
+      # Avant la commande `npm publish`, ajoute une étape pour mettre à jour la version
+      - name: Bump version
+        run: npm version patch --no-git-tag-version
+
+      # Publish to npm
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+        if: github.ref == 'refs/heads/main' # Publishes only from the main branch
