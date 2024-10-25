@@ -58,6 +58,11 @@ createAppKit({
   wagmiConfig,
   defaultChain: mainnet, // Optional
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
+  tokens: {
+    1: {
+      address: '0xdAC17F958D2ee523a2206206994597C13D831ec7',
+    },
+  },
 })
 
 function AppContent() {

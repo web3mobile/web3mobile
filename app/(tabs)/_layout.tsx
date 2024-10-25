@@ -4,10 +4,12 @@ import React from 'react'
 import { TabBarIcon } from '@/components/navigation/TabBarIcon'
 import { Colors } from '@/constants/Colors'
 import { useColorScheme } from '@/hooks/useColorScheme'
+import { useAccount } from 'wagmi'
 
 export default function TabLayout() {
   const colorScheme = useColorScheme()
-
+  const { address, isConnecting, isDisconnected } = useAccount()
+  console.log('address in _layout.tsx', address)
   return (
     <Tabs
       screenOptions={{
@@ -27,18 +29,20 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? 'code-slash' : 'code-slash-outline'}
-              color={color}
-            />
-          ),
-        }}
-      />{' '}
+      {address && (
+        <Tabs.Screen
+          name="explore"
+          options={{
+            title: 'Explore',
+            tabBarIcon: ({ color, focused }) => (
+              <TabBarIcon
+                name={focused ? 'code-slash' : 'code-slash-outline'}
+                color={color}
+              />
+            ),
+          }}
+        />
+      )}
       <Tabs.Screen
         name="settings"
         options={{
