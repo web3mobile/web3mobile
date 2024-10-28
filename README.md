@@ -1,50 +1,155 @@
-# Welcome to your Expo app 👋
+<p align="center">
+ <img src="[your-logo-here]" width="130" alt="Logo for Web3Mobile">
+</p>
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<h1 align="center">
+ create-web3mobile
+</h1>
 
-## Get started
+<p align="center">
+ Interactive CLI to bootstrap a Web3-ready React Native app with a complete, typesafe stack.
+</p>
 
-1. Install dependencies
+<p align="center">
+ Get started with your Web3 Mobile project by running <code>npm create web3mobile@latest</code>
+</p>
 
-   ```bash
-   npm install
-   ```
+<div align="center">
 
-2. Start the app
+[![NPM version][npm-image]][npm-url]
+[![Downloads][downloads-image]][npm-url]
+[![PRs Welcome][prs-image]][prs-url]
 
-   ```bash
-    npx expo start
-   ```
+</div>
 
-In the output, you'll find options to open the app in a
+## Table of contents
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [About](#about)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Features](#features)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## About
 
-## Get a fresh project
+Web3Mobile is an opinionated framework for building mobile Web3 applications. It provides a carefully curated stack of modern tools and libraries, focusing on **developer experience**, **typesafety**, and **Web3 integration**.
 
-When you're ready, run:
+This CLI helps you start new projects with our recommended stack without spending hours on setup and configuration.
+
+## Tech Stack
+
+The core stack includes:
+
+- [React Native](https://reactnative.dev) - Mobile development framework
+- [Expo](https://expo.dev) - React Native tooling
+- [TypeScript](https://typescriptlang.org) - Type safety
+- [NativeWind](https://nativewind.dev) - Tailwind CSS for React Native
+- [Gluestack](https://gluestack.io/) - UI components
+- [WalletConnect](https://walletconnect.com) - Wallet integration
+- [wagmi](https://wagmi.sh) - React Hooks for Ethereum
+- [ethers.js](https://docs.ethers.org/) - Ethereum library
+
+## Getting Started
+
+To create a new app, run one of the following commands:
+
+### npm
 
 ```bash
-npm run reset-project
+npm create web3mobile@latest
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### yarn
 
-## Learn more
+```bash
+yarn create web3mobile
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### pnpm
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+pnpm create web3mobile@latest
+```
 
-## Join the community
+Follow the CLI prompts to configure your project.
 
-Join our community of developers creating universal apps.
+## Features
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Web3Mobile comes with:
+
+### 🔗 Web3 Integration
+
+- Wallet connection out of the box
+- Multiple chain support
+- Transaction management
+- Contract interactions
+- NFT support
+
+### 📱 Mobile-First
+
+- Native UI components
+- Deep linking
+- Biometric authentication
+- Push notifications
+- QR code scanning
+
+### 🛠 Developer Experience
+
+- Type safety throughout
+- Hot reloading
+- Built-in debugging tools
+- Automated testing setup
+- CI/CD configuration
+
+### 🎨 Styling & UI
+
+- NativeWind for Tailwind CSS styling
+- Gluestack UI components
+- Dark mode support
+- Customizable themes
+
+## Configuration
+
+### Environment Variables
+
+Create a .env file in your project root:
+
+WALLET_CONNECT_PROJECT_ID=your_project_id
+INFURA_ID=your_infura_id
+
+### Network Configuration
+
+// config/networks.ts
+export const networks = {
+mainnet: {
+// ...
+},
+polygon: {
+// ...
+}
+}
+
+See the [documentation](your-docs-link) for complete configuration options.
+
+## Contributing
+
+We love contributors! Please read our [Contributing Guide](CONTRIBUTING.md) before submitting any Pull Requests.
+
+### Development
+
+1. Fork the repository
+2. Create your feature branch: git checkout -b feature/AmazingFeature
+3. Commit your changes: git commit -m 'Add some AmazingFeature'
+4. Push to the branch: git push origin feature/AmazingFeature
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+[npm-image]: https://img.shields.io/npm/v/create-web3mobile?color=0b7285&logoColor=0b7285
+[npm-url]: https://www.npmjs.com/package/create-web3mobile
+[downloads-image]: https://img.shields.io/npm/dm/create-web3mobile?color=364fc7&logoColor=364fc7
+[prs-image]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
+[prs-url]: http://makeapullrequest.com
