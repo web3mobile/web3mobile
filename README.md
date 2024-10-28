@@ -1,5 +1,5 @@
 <p align="center">
- <img src="[https://res.cloudinary.com/matthieudev/image/upload/v1730132947/create-web3mobile-logo_bppnio.png]" width="130" alt="Logo for Web3Mobil">
+ <img src="https://res.cloudinary.com/matthieudev/image/upload/v1730132947/create-web3mobile-logo_bppnio.png" width="130" alt="Logo for Web3Mobile">
 </p>
 
 <h1 align="center">
